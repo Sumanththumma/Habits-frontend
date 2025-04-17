@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
+import CreateHabit from './CreateHabit';
 const HabitList = () => {
     const [habits, setHabits] = useState([]);
     
@@ -14,7 +14,10 @@ const HabitList = () => {
     <div className='w-full flex flex-col items-center justify-center'>
       
       <ul className='max-w-[60vw] min-w-[50vw] px-3 py-1 mt-5 bg-gray-950 shadow-xl rounded-md drop-shadow-yellow-50 text-white'>
-      <h2 className='w-full text-start text-2xl mb-5 text-shadow-blue-100'>My Habits</h2>
+      <div className='w-full flex items-center justify-between'>
+        <h2 className='w-full text-start text-2xl mb-5 text-shadow-blue-100'>My Habits</h2>
+        <CreateHabit />
+      </div>
         {habits.map((habit)=>{
           let title = habit.title? habit.title : 'error';
           let records = habit.records? habit.records : '';
